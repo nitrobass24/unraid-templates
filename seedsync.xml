@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>seedsync</Name>
+    <Repository>ghcr.io/nitrobass24/seedsync:latest</Repository>
+    <Registry>https://github.com/nitrobass24/seedsync/pkgs/container/seedsync</Registry>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/nitrobass24/seedsync/issues</Support>
+    <Project>https://github.com/nitrobass24/seedsync</Project>
+    <Overview>SeedSync syncs files from a remote Linux server (seedbox) to your local machine using LFTP.&#xD;
+&#xD;
+Features:&#xD;
+- Fast parallel downloads via LFTP&#xD;
+- Web UI dashboard with real-time progress&#xD;
+- Auto-queue for hands-free syncing&#xD;
+- Archive extraction (RAR, 7z, zip)&#xD;
+- Auto-delete from remote after download&#xD;
+- Staging directory support (download to SSD, move to array)&#xD;
+- Dark mode&#xD;
+&#xD;
+Setup: After starting the container, open the Web UI and configure your remote server address, username, password/SSH key, and remote path in Settings.</Overview>
+    <Category>Downloaders: Network:Other Productivity: Tools:</Category>
+    <WebUI>http://[IP]:[PORT:8800]</WebUI>
+    <Icon>https://raw.githubusercontent.com/nitrobass24/unraid-templates/main/images/seedsync-icon.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <DonateText/>
+    <DonateLink/>
+    <DonateImg/>
+    <Requires/>
+    <Config Name="Web UI Port" Target="8800" Default="8800" Mode="tcp" Description="Port for the SeedSync web interface." Type="Port" Display="always" Required="true" Mask="false">8800</Config>
+    <Config Name="Config Path" Target="/config" Default="/mnt/user/appdata/seedsync" Mode="rw" Description="Stores SeedSync configuration and state files." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/seedsync</Config>
+    <Config Name="Downloads Path" Target="/downloads" Default="/mnt/user/downloads/seedsync" Mode="rw" Description="Where downloaded files are saved. Point this to your media share or downloads folder." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/seedsync</Config>
+    <Config Name="SSH Key (optional)" Target="/home/seedsync/.ssh/id_rsa" Default="" Mode="ro" Description="Path to your SSH private key for password-less authentication to the remote server. Leave empty to use password auth." Type="Path" Display="always" Required="false" Mask="false"/>
+    <Config Name="PUID" Target="PUID" Default="99" Description="User ID for file permissions. Default 99 is the Unraid 'nobody' user." Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Description="Group ID for file permissions. Default 100 is the Unraid 'users' group." Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+</Container>
