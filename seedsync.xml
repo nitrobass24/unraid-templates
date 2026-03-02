@@ -35,4 +35,5 @@ Setup: After starting the container, open the Web UI and configure your remote s
     <Config Name="SSH Key (optional)" Target="/home/seedsync/.ssh/id_rsa" Default="" Mode="ro" Description="Path to your SSH private key for password-less authentication to the remote server. Leave empty to use password auth." Type="Path" Display="always" Required="false" Mask="false"/>
     <Config Name="PUID" Target="PUID" Default="99" Description="User ID for file permissions. Default 99 is the Unraid 'nobody' user." Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
     <Config Name="PGID" Target="PGID" Default="100" Description="Group ID for file permissions. Default 100 is the Unraid 'users' group." Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+    <Config Name="UMASK" Target="UMASK" Default="" Description="File creation mask for downloaded files. Leave empty to use the default (0002 → rw-rw-r--). Common values: 000 (rw-rw-rw-), 022 (rw-r--r--)." Type="Variable" Display="advanced" Required="false" Mask="false"/>
 </Container>
