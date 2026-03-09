@@ -3,6 +3,7 @@
     <Name>seedsync</Name>
     <Repository>ghcr.io/nitrobass24/seedsync:latest</Repository>
     <Registry>https://github.com/nitrobass24/seedsync/pkgs/container/seedsync</Registry>
+    <Network>bridge</Network>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
     <Support>https://github.com/nitrobass24/seedsync/issues</Support>
